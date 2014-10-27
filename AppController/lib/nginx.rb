@@ -529,6 +529,8 @@ server {
       proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
       proxy_set_header Host $http_host;
       proxy_redirect off;
+      proxy_next_upstream     error timeout invalid_header http_500;
+      proxy_connect_timeout 5;
       proxy_pass http://#{DatastoreServer::NAME};
       client_max_body_size 30M;
       proxy_connect_timeout 600;
@@ -564,6 +566,8 @@ server {
       proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
       proxy_set_header Host $http_host;
       proxy_redirect off;
+      proxy_next_upstream     error timeout invalid_header http_500;
+      proxy_connect_timeout 5;
 
       client_body_timeout 600;
       proxy_read_timeout 600;
