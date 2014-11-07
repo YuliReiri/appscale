@@ -1,8 +1,5 @@
 #!/bin/bash
-# Copyright 2009 Google Inc. All Rights Reserved.
-#
-# Launches the Development AppServer.  This utility allows developers
-# to test a Google App Engine application on their local workstation.
+# Launches the AppScale Java AppServer with modified jars.
 #
 [ -z "${DEBUG}" ] || set -x  # trace if $DEBUG env. var. is non-zero
 SDK_BIN="`dirname "$0" | sed -e "s#^\\([^/]\\)#${PWD}/\\1#"`" # sed makes absolute
